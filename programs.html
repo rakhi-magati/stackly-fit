@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Programs — StacklyFit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Instrument+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="curtain" aria-hidden="true"><svg viewBox="0 0 320 60">
+            <path d="M0 30h90l16-26 26 52 20-40 14 14h154" />
+        </svg></div>
+    <header class="site-header">
+        <div class="bar"><a class="brand" href="index.html">stacklyfit<i>.</i></a>
+            <nav id="nav"><a href="index.html">Home</a><a href="programs.html" class="on">Programs</a><a
+                    href="sports.html">Sports</a><a href="membership.html">Membership</a><a href="about.html">About</a>
+            </nav>
+            <div class="acts"><a href="login.html">Log in</a><a class="btn sm" href="login.html">Join now
+                    <b>↗</b></a><button class="burger" id="burger" aria-label="Menu">☰</button></div>
+        </div>
+    </header>
+    <main>
+        <section class="phero" style="padding-bottom:0">
+            <div class="wrap">
+                <div class="box">
+                    <div class="bg"></div>
+                    <h1><span class="line"><span style="--i:0">Personalised</span></span><span class="line"><span
+                                style="--i:1">fitness for</span></span><span class="line"><span style="--i:2">every
+                                goal.</span></span></h1>
+                    <p class="lead fade" style="--i:0">Whether you want to lose weight, build muscle or simply live
+                        healthier, there is a program designed for you. Train smarter. Get stronger.</p>
+                    <div class="fade" style="--i:1"><a class="btn magnet" href="#all">Explore all programs <b>↓</b></a>
+                    </div>
+                    <div class="perks fade" style="--i:2"><span>Expert trainers</span><span>Personalised
+                            plans</span><span>Flexible schedule</span><span>Supportive community</span></div>
+                </div>
+            </div>
+        </section>
+        <section id="all">
+            <div class="wrap">
+                <div class="head">
+                    <h2>Find your perfect program</h2>
+                    <p>Choose from a variety of fitness programs matched to your goals, level and lifestyle.</p>
+                </div>
+                <div class="filters" id="filters"><button class="on" data-f="all">All</button><button class=""
+                        data-f="wl">Weight Loss</button><button class="" data-f="mg">Muscle Gain</button><button
+                        class="" data-f="st">Strength</button><button class="" data-f="fl">Flexibility</button><button
+                        class="" data-f="gf">General Fitness</button></div>
+                <div class="pgrid" id="pgrid">
+                    <article class="pc pop-in" data-c="wl" style="--d:0.0s" tabindex="0"><img
+                            src="assets/images/hiit-training.jpg" alt="" loading="lazy">
+                        <div>
+                            <h3>Weight Loss Program</h3>
+                            <p>Burn calories, boost metabolism and reach your ideal weight with a structured plan.</p><a
+                                class="go" href="login.html">Learn more <b>→</b></a>
+                        </div>
+                    </article>
+                    <article class="pc pop-in" data-c="mg" style="--d:0.08s" tabindex="0"><img
+                            src="assets/images/hero-strength.jpg" alt="" loading="lazy">
+                        <div>
+                            <h3>Muscle Build Program</h3>
+                            <p>Build lean muscle, increase strength and transform your physique with expert guidance.
+                            </p><a class="go" href="login.html">Learn more <b>→</b></a>
+                        </div>
+                    </article>
+                    <article class="pc pop-in" data-c="st" style="--d:0.16s" tabindex="0"><img
+                            src="assets/images/cycling.jpg" alt="" loading="lazy">
+                        <div>
+                            <h3>Endurance Program</h3>
+                            <p>Improve stamina, boost performance and go further with endurance training.</p><a
+                                class="go" href="login.html">Learn more <b>→</b></a>
+                        </div>
+                    </article>
+                    <article class="pc pop-in" data-c="st" style="--d:0.24s" tabindex="0"><img
+                            src="assets/images/hero-strength.jpg" alt="" loading="lazy">
+                        <div>
+                            <h3>Strength Program</h3>
+                            <p>Increase power and build confidence with targeted strength training.</p><a class="go"
+                                href="login.html">Learn more <b>→</b></a>
+                        </div>
+                    </article>
+                    <article class="pc pop-in" data-c="fl" style="--d:0.32s" tabindex="0"><img
+                            src="assets/images/yoga.jpg" alt="" loading="lazy">
+                        <div>
+                            <h3>Flexibility Program</h3>
+                            <p>Improve mobility, reduce stress and prevent injuries with guided sessions.</p><a
+                                class="go" href="login.html">Learn more <b>→</b></a>
+                        </div>
+                    </article>
+                    <article class="pc pop-in" data-c="gf" style="--d:0.4s" tabindex="0"><img
+                            src="assets/images/hiit-training.jpg" alt="" loading="lazy">
+                        <div>
+                            <h3>General Fitness Program</h3>
+                            <p>Stay active, build healthy habits and feel your best with all-round training.</p><a
+                                class="go" href="login.html">Learn more <b>→</b></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section style="padding-bottom:0">
+            <div class="wrap">
+                <div class="cta rv">
+                    <h2>Choose your program today.</h2><a class="btn" href="login.html">Join now <b>↗</b></a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="wrap">
+            <div class="fg">
+                <div class="big">Stronger every day.</div>
+                <div>
+                    <h4>Quick links</h4><a href="index.html">Home</a><a href="programs.html">Programs</a><a
+                        href="sports.html">Sports</a><a href="membership.html">Membership</a><a
+                        href="about.html">About</a>
+                </div>
+                <div>
+                    <h4>Support</h4><a href="mailto:roxxxx@gmail.com">Help centre</a><a
+                        href="mailto:roxxxx@gmail.com">Contact</a><a href="#">Privacy</a>
+                </div>
+                <div>
+                    <h4>Connect</h4><a href="tel:+911234567890">+91 1234567890</a><a href="#">Hyderabad</a><a
+                        href="mailto:roxxxx@gmail.com">roxxxx@gmail.com</a><a href="#">Instagram</a><a
+                        href="#">YouTube</a>
+                </div>
+            </div>
+            <div class="copy"><span>© 2026 StacklyFit. Better, stronger, faster.</span><a href="#"
+                    style="opacity:1">Back to top ↑</a></div>
+        </div>
+    </footer>
+    <div class="toast" id="toast"></div>
+    <script src="script.js"></script>
+</body>
+
+</html>

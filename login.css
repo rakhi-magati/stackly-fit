@@ -1,0 +1,397 @@
+:root {
+    --ink: #0A0F1F;
+    --cobalt: #2438FF;
+    --amber: #FFC93C;
+    --mute: #5B6378;
+    --line: rgba(10, 15, 31, .18);
+    --ease: cubic-bezier(.2, .8, .2, 1)
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0
+}
+
+body {
+    font: 400 16px/1.5 'Instrument Sans', system-ui, sans-serif;
+    background: #EEF1F6;
+    color: var(--ink);
+    min-height: 100vh
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0)
+}
+
+button {
+    font: inherit;
+    color: inherit;
+    cursor: pointer
+}
+
+[hidden] {
+    display: none !important
+}
+
+.auth-shell {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+    padding: 16px;
+    gap: 16px
+}
+
+.visual-panel {
+    position: relative;
+    border-radius: 36px;
+    overflow: hidden;
+    background: var(--ink);
+    order: 0;
+    transition: transform .7s var(--ease)
+}
+
+.visual-panel img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: .75;
+    animation: kb 16s ease-in-out infinite alternate
+}
+
+@keyframes kb {
+    to {
+        transform: scale(1.12)
+    }
+}
+
+.visual-panel::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(transparent 40%, rgba(36, 56, 255, .55))
+}
+
+.vq {
+    position: absolute;
+    z-index: 2;
+    left: 44px;
+    bottom: 44px;
+    color: #fff;
+    font: 800 clamp(2.6rem, 5vw, 4.8rem)/.95 'Bricolage Grotesque';
+    letter-spacing: -.04em;
+    animation: in 1s .3s var(--ease) both
+}
+
+@keyframes in {
+    from {
+        opacity: 0;
+        transform: translateY(30px)
+    }
+}
+
+.auth-shell.is-login .visual-panel {
+    order: 2
+}
+
+.auth-panel {
+    display: grid;
+    place-items: center;
+    padding: 30px
+}
+
+.auth-content {
+    width: min(430px, 100%);
+    animation: in .8s var(--ease) both
+}
+
+.home-brand {
+    font: 800 1.5rem 'Bricolage Grotesque';
+    letter-spacing: -.04em;
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+    margin-bottom: 14px
+}
+
+.home-brand i {
+    color: var(--cobalt);
+    font-style: normal
+}
+
+.back-home {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--mute);
+    font-weight: 600;
+    text-decoration: none;
+    margin-bottom: 28px;
+    transition: color .25s, transform .25s
+}
+
+.back-home span {
+    font-size: 1.2rem;
+    line-height: 1
+}
+
+.back-home:hover {
+    color: var(--cobalt);
+    transform: translateX(-3px)
+}
+
+.auth-heading h1 {
+    font: 800 3rem/1 'Bricolage Grotesque';
+    letter-spacing: -.04em
+}
+
+.auth-heading p {
+    color: var(--mute);
+    margin: 10px 0 26px
+}
+
+.auth-tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: #fff;
+    border-radius: 99px;
+    padding: 5px;
+    margin-bottom: 22px;
+    border: 1px solid var(--line)
+}
+
+.tab {
+    border: 0;
+    background: none;
+    padding: 11px;
+    border-radius: 99px;
+    font-weight: 600;
+    transition: .4s var(--ease)
+}
+
+.tab.active {
+    background: var(--ink);
+    color: #fff
+}
+
+.field {
+    position: relative;
+    margin-bottom: 12px;
+    animation: in .5s var(--ease) both
+}
+
+.field input {
+    width: 100%;
+    padding: 15px 18px;
+    border-radius: 16px;
+    border: 1.5px solid var(--line);
+    background: #fff;
+    font: inherit;
+    transition: .25s
+}
+
+.field input:focus {
+    outline: 0;
+    border-color: var(--cobalt);
+    box-shadow: 0 0 0 4px rgba(36, 56, 255, .14)
+}
+
+.field input[aria-invalid] {
+    border-color: #D6264B
+}
+
+.error {
+    display: block;
+    color: #D6264B;
+    font-size: .82rem;
+    margin: 4px 6px 0;
+    min-height: 0
+}
+
+.show-password {
+    position: absolute;
+    right: 12px;
+    top: 10px;
+    border: 0;
+    background: none;
+    width: 32px;
+    height: 32px;
+    display: grid;
+    place-items: center
+}
+
+.show-password svg {
+    width: 22px;
+    fill: none;
+    stroke: var(--mute);
+    stroke-width: 1.8;
+    stroke-linecap: round
+}
+
+.show-password[aria-pressed=true] .slash {
+    display: none
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 14px 0 18px;
+    font-size: .92rem
+}
+
+.terms {
+    display: flex;
+    gap: 10px;
+    align-items: center
+}
+
+.terms input {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--cobalt)
+}
+
+.terms a,
+.link-button,
+.inline-link {
+    color: var(--cobalt);
+    font-weight: 600;
+    background: none;
+    border: 0;
+    padding: 0
+}
+
+.submit-button {
+    width: 100%;
+    padding: 16px;
+    border: 0;
+    border-radius: 99px;
+    background: var(--cobalt);
+    color: #fff;
+    font-weight: 700;
+    transition: transform .3s var(--ease), box-shadow .3s, opacity .3s
+}
+
+.submit-button:not(:disabled):hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 30px rgba(36, 56, 255, .35)
+}
+
+.submit-button:disabled {
+    opacity: .4;
+    cursor: not-allowed
+}
+
+.switch-copy {
+    text-align: center;
+    margin: 18px 0;
+    color: var(--mute)
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px
+}
+
+.social-button {
+    width: 64px;
+    height: 52px;
+    border-radius: 16px;
+    border: 1.5px solid var(--line);
+    background: #fff;
+    display: grid;
+    place-items: center;
+    font-weight: 800;
+    transition: .3s var(--ease)
+}
+
+.social-button:hover {
+    transform: translateY(-4px);
+    border-color: var(--ink)
+}
+
+.microsoft-mark {
+    display: grid;
+    grid-template-columns: repeat(2, 9px);
+    gap: 2px
+}
+
+.microsoft-mark i {
+    height: 9px;
+    background: #F25022
+}
+
+.microsoft-mark i:nth-child(2) {
+    background: #7FBA00
+}
+
+.microsoft-mark i:nth-child(3) {
+    background: #00A4EF
+}
+
+.microsoft-mark i:nth-child(4) {
+    background: #FFB900
+}
+
+.support-copy {
+    text-align: center;
+    margin-top: 20px;
+    font-size: .85rem
+}
+
+.support-copy a {
+    color: var(--mute)
+}
+
+.form-message {
+    text-align: center;
+    color: var(--cobalt);
+    font-weight: 500;
+    margin-top: 12px;
+    font-size: .9rem;
+    min-height: 1.4em
+}
+
+.form-message[data-type="error"] {
+    color: #D6264B
+}
+
+.form-message[data-type="success"] {
+    color: #11864B
+}
+
+:focus-visible {
+    outline: 3px solid var(--cobalt);
+    outline-offset: 2px
+}
+
+@media(max-width:820px) {
+    .auth-shell {
+        grid-template-columns: 1fr
+    }
+
+    .visual-panel {
+        min-height: 200px;
+        order: 0 !important
+    }
+
+    .vq {
+        font-size: 2rem;
+        left: 24px;
+        bottom: 22px
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+    * {
+        animation: none !important;
+        transition: none !important
+    }
+}
